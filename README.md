@@ -13,9 +13,9 @@ Convertion en un projet Eclipse : ./gradlew eclise    sous Linux ou   gradlew ec
 
 Importation sous Eclipse : File ->  Import -> General -> Existing project into werokspace...
 
-Lancer le main de création de la base : 
+Lancer le main de création de la base : https://github.com/charroux/CorrectionWebServiceJPA/blob/master/src/main/java/com/univ/model/Main.java
 
-Lancer le Web Service : 
+Lancer le Web Service : https://github.com/charroux/CorrectionWebServiceJPA/blob/master/src/main/java/com/univ/CorrectionWebServiceJpaApplication.java
 
 Tester le get : http://localhost:8080/cars
 
