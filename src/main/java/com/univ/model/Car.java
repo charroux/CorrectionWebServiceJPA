@@ -14,8 +14,12 @@ import javax.persistence.OneToMany;
 public class Car {
 
 	private long id;
-	private String plateNumber;
+	private int plateNumber;
 	private List<Rent> rents = new ArrayList<Rent>();
+	private boolean rented;
+	private String model;
+	private int price;
+	private int numberOfDays;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -36,15 +40,45 @@ public class Car {
 		this.rents = rents;
 	}
 
-	public String getPlateNumber() {
+	public int getPlateNumber() {
 		return plateNumber;
 	}
 
-	public void setPlateNumber(String plateNumber) {
+	public void setPlateNumber(int plateNumber) {
 		this.plateNumber = plateNumber;
 	}
-	
-	
+
+	public boolean isRented() {
+		return rented;
+	}
+
+	public void setRented(boolean rented) {
+		this.rented = rented;
+	}
+
+	public String getModel() {
+		return model;
+	}
+
+	public void setModel(String model) {
+		this.model = model;
+	}
+
+	public int getPrice() {
+		return price;
+	}
+
+	public void setPrice(int price) {
+		this.price = price;
+	}
+
+	public int getNumberOfDays() {
+		return numberOfDays;
+	}
+
+	public void setNumberOfDays(int numberOfDays) {
+		this.numberOfDays = numberOfDays;
+	}
 	
 }
 

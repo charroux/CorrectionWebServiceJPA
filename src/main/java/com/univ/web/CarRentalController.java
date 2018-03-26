@@ -10,6 +10,7 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -32,7 +33,7 @@ public class CarRentalController {
 		entityManager = emf.createEntityManager();
 	}
 	
-	
+	@CrossOrigin(origins = "http://localhost:4200")
 	@RequestMapping(value = "/cars", method = RequestMethod.GET)
 	@ResponseStatus(HttpStatus.OK)
 	@ResponseBody
@@ -40,17 +41,18 @@ public class CarRentalController {
 		return entityManager.createQuery("select c from Car c").getResultList();
 	}
 	
+	@CrossOrigin(origins = "http://localhost:4200")
 	@RequestMapping(value = "/cars/{plateNumber}", method = RequestMethod.GET)
 	@ResponseStatus(HttpStatus.OK)
 	@ResponseBody
-	public Car aCar(@PathVariable("plateNumber") String plateNumber) throws Exception{
-		return (Car) entityManager.createQuery("select c from Car c where plateNumber like '" + plateNumber + "'").getSingleResult();
+	public Car aCar(@PathVariable("plateNumber") int plateNumber) throws Exception{
+		return (Car) entityManager.createQuery("select c from Car c where c.plateNumber like '" + plateNumber + "'").getSingleResult();
 	}
 	
-	
+	@CrossOrigin(origins = "http://localhost:4200")
 	@RequestMapping(value = "/cars/{plateNumber}", method = RequestMethod.PUT)
 	@ResponseStatus(HttpStatus.OK)
-	void rent(@PathVariable(name="plateNumber") String plateNumber, @RequestParam(name="louer", required=true) boolean louer) {
+	void rent(@PathVariable(name="plateNumber") int plateNumber, @RequestParam(name="louer", required=true) boolean louer) {
 		EntityTransaction tx = entityManager.getTransaction();
 		tx.begin();
 		try {

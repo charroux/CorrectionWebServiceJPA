@@ -28,8 +28,11 @@ public class Main
     		
 			tx.begin();
 			
-			Car car = new Car();
-			car.setPlateNumber("11AA22");
+			Car ferrari = new Car();
+			ferrari.setPlateNumber(111);
+			ferrari.setModel("Ferrari");
+			ferrari.setPrice(1000);
+			ferrari.setRented(true);
 			
 			Person person = new Person();
 			person.setName("Tintin");
@@ -43,8 +46,8 @@ public class Main
 			
 			rent1.setPerson(person);
 			
-			car.getRents().add(rent1);
-			rent1.setCar(car);
+			ferrari.getRents().add(rent1);
+			rent1.setCar(ferrari);
 			
 			Rent rent2 = new Rent();
 			beginDate = dateFormat.parse("23/09/2017");
@@ -54,14 +57,24 @@ public class Main
 				
 			rent2.setPerson(person);
 			
-			car.getRents().add(rent2);
-			rent2.setCar(car);
+			ferrari.getRents().add(rent2);
+			rent2.setCar(ferrari);
 			
 			person.getRents().add(rent1);
 			person.getRents().add(rent2);
 			
-			entityManager.persist(car);
-				
+			entityManager.persist(ferrari);
+			
+			
+			Car renault = new Car();
+			renault.setPlateNumber(222);
+			renault.setModel("Renault");
+			renault.setPrice(500);
+			renault.setRented(false);
+			
+			entityManager.persist(renault);
+			
+			
 			tx.commit();			
 		
 		}catch(Exception e){
