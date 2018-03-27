@@ -29,7 +29,7 @@ public class Main
 			tx.begin();
 			
 			Car ferrari = new Car();
-			ferrari.setPlateNumber(111);
+			ferrari.setPlateNumber("11AA22");
 			ferrari.setModel("Ferrari");
 			ferrari.setPrice(1000);
 			ferrari.setRented(true);
@@ -67,7 +67,7 @@ public class Main
 			
 			
 			Car renault = new Car();
-			renault.setPlateNumber(222);
+			renault.setPlateNumber("22BB33");
 			renault.setModel("Renault");
 			renault.setPrice(500);
 			renault.setRented(false);

@@ -14,7 +14,7 @@ import javax.persistence.OneToMany;
 public class Car {
 
 	private long id;
-	private int plateNumber;
+	private String plateNumber;
 	private List<Rent> rents = new ArrayList<Rent>();
 	private boolean rented;
 	private String model;
@@ -40,11 +40,11 @@ public class Car {
 		this.rents = rents;
 	}
 
-	public int getPlateNumber() {
+	public String getPlateNumber() {
 		return plateNumber;
 	}
 
-	public void setPlateNumber(int plateNumber) {
+	public void setPlateNumber(String plateNumber) {
 		this.plateNumber = plateNumber;
 	}
 

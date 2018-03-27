@@ -1,6 +1,7 @@
 package com.univ.web;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -45,14 +46,15 @@ public class CarRentalController {
 	@RequestMapping(value = "/cars/{plateNumber}", method = RequestMethod.GET)
 	@ResponseStatus(HttpStatus.OK)
 	@ResponseBody
-	public Car aCar(@PathVariable("plateNumber") int plateNumber) throws Exception{
+	public Car aCar(@PathVariable("plateNumber") String plateNumber) throws Exception{
 		return (Car) entityManager.createQuery("select c from Car c where c.plateNumber like '" + plateNumber + "'").getSingleResult();
 	}
 	
 	@CrossOrigin(origins = "http://localhost:4200")
 	@RequestMapping(value = "/cars/{plateNumber}", method = RequestMethod.PUT)
 	@ResponseStatus(HttpStatus.OK)
-	void rent(@PathVariable(name="plateNumber") int plateNumber, @RequestParam(name="louer", required=true) boolean louer) {
+	@ResponseBody
+	public Car rent(@PathVariable(name="plateNumber") String plateNumber, @RequestParam(name="louer", required=true) boolean louer) {
 		EntityTransaction tx = entityManager.getTransaction();
 		tx.begin();
 		try {
@@ -60,18 +62,23 @@ public class CarRentalController {
 			List<Rent> rents = car.getRents();
 			if(rents.size() == 0){
 				Rent rent = new Rent();
+				rent.setDate(Calendar.getInstance().getTime());
 				rents.add(rent);
 				rent.setCar(car);
+				car.setRented(true);
 			} else {
 				rents.remove(0);
+				car.setRented(false);
 			}
 			entityManager.persist(car);
 			tx.commit();
+			
+			return car;
 		} catch (Exception e) {
 			tx.rollback();
 			e.printStackTrace();
 		}
-		
+		return null;
 	}
 
 }
