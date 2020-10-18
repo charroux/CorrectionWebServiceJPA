@@ -5,9 +5,9 @@
     <persistence-unit name="manager1" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     
-    <class>com.univ.model.Car</class>
-    <class>com.univ.model.Person</class>
-    <class>com.univ.model.Rent</class>
+    <class>com.univ.Car</class>
+    <class>com.univ.Person</class>
+    <class>com.univ.Rent</class>
     
     <exclude-unlisted-classes>true</exclude-unlisted-classes>
     

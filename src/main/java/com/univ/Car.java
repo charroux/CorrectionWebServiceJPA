@@ -1,4 +1,4 @@
-package com.univ.model;
+package com.univ;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +15,6 @@ public class Car {
 
 	private long id;
 	private String plateNumber;
-	private List<Rent> rents = new ArrayList<Rent>();
 	private boolean rented;
 	private String model;
 	private int price;
@@ -29,15 +28,6 @@ public class Car {
 
 	public void setId(long id) {
 		this.id = id;
-	}
-
-	@OneToMany(mappedBy="car", cascade=CascadeType.ALL)
-	public List<Rent> getRents() {
-		return rents;
-	}
-
-	public void setRents(List<Rent> rents) {
-		this.rents = rents;
 	}
 
 	public String getPlateNumber() {
