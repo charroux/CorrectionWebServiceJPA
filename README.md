@@ -1,23 +1,18 @@
 # CorrectionWebServiceJPA
 
-Télécharger et décompresser HSQLBD : https://sourceforge.net/projects/hsqldb/files/hsqldb/hsqldb_1_8_1/
+## Cross origin security
 
-Démarrer la base de données (dans dossier lib d'hsqldb) : java -cp hsqldb.jar org.hsqldb.Server
+https://en.wikipedia.org/wiki/Cross-origin_resource_sharing
 
-Démarrer l'outil d'inspaction de la base de données (dans dossier lib d'hsqldb) : java -cp hsqldb.jar org.hsqldb.util.DatabaseManagerSwing
-Se connecter au type server.
+@CrossOrigin(origins = "http://localhost:4200") in https://github.com/charroux/CorrectionWebServiceJPA/blob/master/src/main/java/com/univ/CarRentalController.java
 
-Build de l'application : ./gradlew build    sous Linux ou   gradlew build   sous Windows
+## Launching
 
-Convertion en un projet Eclipse : ./gradlew eclise    sous Linux ou   gradlew eclipse   sous Windows
+Open the project inside Intellij or Import as Gradle project inside Eclipse
 
-Importation sous Eclipse : File ->  Import -> General -> Existing project into werokspace...
+Run the main program: https://github.com/charroux/CorrectionWebServiceJPA/blob/master/src/main/java/com/univ/CorrectionWebServiceJpaApplication.java
 
-Lancer le main de création de la base : https://github.com/charroux/CorrectionWebServiceJPA/blob/master/src/main/java/com/univ/model/Main.java
+## Test
 
-Lancer le Web Service : https://github.com/charroux/CorrectionWebServiceJPA/blob/master/src/main/java/com/univ/CorrectionWebServiceJpaApplication.java
-
-Tester le get : http://localhost:8080/cars
-
-Tester le put sur l'URL (avec RestCleitn par exemple) : http://localhost:8080/cars/11AA22?louer=true
+http://localhost:8080/cars
 
