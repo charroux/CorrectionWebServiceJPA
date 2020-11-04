@@ -69,6 +69,18 @@ public class Car {
 	public void setNumberOfDays(int numberOfDays) {
 		this.numberOfDays = numberOfDays;
 	}
-	
+
+
+	@Override
+	public String toString() {
+		return "Car{" +
+				"id=" + id +
+				", plateNumber='" + plateNumber + '\'' +
+				", rented=" + rented +
+				", model='" + model + '\'' +
+				", price=" + price +
+				", numberOfDays=" + numberOfDays +
+				'}';
+	}
 }
 

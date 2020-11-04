@@ -1,5 +1,12 @@
 # CorrectionWebServiceJPA
 
+This project expose JPA classes with a Rest web service.
+Data are stored in a H2 SQL database. 
+
+## Compatibility
+
+Java 11
+
 ## The web service
 
 https://github.com/charroux/CorrectionWebServiceJPA/blob/master/src/main/java/com/univ/CarRentalController.java
