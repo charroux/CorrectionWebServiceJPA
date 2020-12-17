@@ -15,6 +15,10 @@ https://github.com/charroux/CorrectionWebServiceJPA/blob/master/src/main/java/co
 
 https://github.com/charroux/CorrectionWebServiceJPA/blob/master/src/main/java/com/univ/Car.java
 
+## The Database access
+
+https://github.com/charroux/CorrectionWebServiceJPA/blob/master/src/main/java/com/univ/CarRepository.java
+
 ## Cross origin security
 
 https://en.wikipedia.org/wiki/Cross-origin_resource_sharing
@@ -26,6 +30,14 @@ https://en.wikipedia.org/wiki/Cross-origin_resource_sharing
 Open the project inside Intellij or Import as Gradle project inside Eclipse
 
 Run the main program: https://github.com/charroux/CorrectionWebServiceJPA/blob/master/src/main/java/com/univ/CorrectionWebServiceJpaApplication.java
+
+## Check the database
+
+Verify the database content using the H2 web console: http://localhost:8080/h2-console
+
+Then modify the JDBC URL with the good one provided into the Eclipse or Intellij console. Here is an example: 
+
+H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:dca7f3e9-95e2-425d-9ccf-c0aa71824aa1'
 
 ## Test
 
